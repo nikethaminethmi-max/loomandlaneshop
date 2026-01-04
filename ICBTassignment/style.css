@@ -1,0 +1,718 @@
+:root {
+  --color-primary:#2A2A2A;
+  --color-secondary: #6E7F6D;
+  --color-accent: #C89F76;
+  --color-bg: #FFFFFF;
+  --color-surface: #F7F7F7;
+  --color-text: #1B1B1B;
+  --color-text-muted: #777777;
+  --color-success: #2E7D32;
+  --color-warning: #B26A00;
+  --color-error: #B00020;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* Logo text — light mode */
+.navbar-brand { 
+  color: var(--color-text); 
+}
+.navbar-brand .logo-text,
+.navbar-brand .brand-text {
+  color: inherit;
+  font-weight: 500;
+}
+
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  background-image: url('backgroundPic.jpg');
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  color: var(--color-primary);
+}
+
+.ll-header .navbar {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.navbar-brand .logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+
+.nav-link.active {
+  color: var(--color-primary) !important;
+  font-weight: 500;
+}
+
+.search-wrap input {
+  max-width: 220px;
+}
+
+.cart-link i {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--color-surface), #ffffff);
+}
+
+.hero .hero-image {
+  background-image: url('frontPic.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 480px;
+}
+
+.product-card .price {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.promo-band {
+  background: var(--color-surface);
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.collection-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.collection-tile .tile-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.tile-crafts { background-image: url('craftSL.jpg'); }
+.tile-decor { background-image: url('decorSL.jpg'); }
+.tile-accessories { background-image: url('accessoriesSL.jpg'); }
+
+.collection-tile .tile-content {
+  padding: var(--space-2);
+}
+
+.ll-footer {
+  background: var(--color-surface);
+  border-top: 1px solid #ececec;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: #1F1F1F;
+  border-color: #1F1F1F;
+}
+.btn-primary:disabled {
+  background-color: #CCCCCC;
+  border-color: #CCCCCC;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* Cards and surfaces */
+.card {
+  border-radius: 12px;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  border-radius: 8px;
+}
+
+/* Dark mode */
+.dark-mode {
+  --color-primary: #EAEAEA;
+  --color-secondary: #9BB09A;
+  --color-accent: #D4B08A;
+  --color-bg: #121212;
+  --color-surface: #1E1E1E;
+  --color-text: #F2F2F2;
+  --color-text-muted: #A0A0A0;
+  --color-success: #66BB6A;
+  --color-warning: #FFA000;
+  --color-error: #CF6679;
+}
+
+.dark-mode body,
+.dark-mode {
+  background: var(--color-bg-dark);
+  background: var(--color-text-primary-dark);
+  background-image: url('darkmode.jpg'); /* adjust path */
+
+}
+
+
+/* Logo text — dark mode */
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-brand .logo-text,
+body.dark-mode .navbar-brand .brand-text {
+  color: var(--color-text) !important;
+}
+
+.navbar.navbar-dark .navbar-brand,
+.navbar.navbar-dark .navbar-brand .brand-text,
+.navbar.navbar-dark .navbar-brand .logo-text {
+  color: var(--color-text) !important;
+}
+
+
+.dark-mode .ll-footer {
+  background: var(--color-surface);
+  border-top-color: #2a2a2a;
+}
+
+.dark-mode .navbar-brand .logo-mark {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dark-mode .nav-link {
+  color: var(--color-text);
+}
+
+
+
+.dark-mode .card {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: #2a2a2a;
+}
+
+.dark-mode .btn-primary {
+  background-color: #2a2a2a;
+  border-color: #2a2a2a;
+}
+
+.dark-mode .product-card .price {
+  color: var(--color-secondary);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .search-wrap input { max-width: 140px; }
+  .hero .hero-image { height: 240px; }
+}
+/* === About Page Styling === */
+.about-page h1 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.about-page p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* Dark mode overrides for About */
+body.dark-mode .about-page p {
+  color: var(--color-text);
+}
+
+/* === Contact Page Styling === */
+.contact-page h1 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.contact-page form {
+  max-width: 600px;
+}
+
+.contact-page .form-control,
+.contact-page textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+}
+
+.contact-page button {
+  margin-top: var(--space-2);
+}
+
+/* Dark mode overrides for Contact */
+body.dark-mode .contact-page .form-control,
+body.dark-mode .contact-page textarea {
+  background-color: var(--color-surface);
+  border-color: #444;
+  color: var(--color-text);
+}
+
+body.dark-mode .contact-page .form-control::placeholder,
+body.dark-mode .contact-page textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.ll-header .navbar-nav {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Dark mode button fixes */
+body.dark-mode .btn,
+body.dark-mode .btn-primary,
+body.dark-mode .btn-outline-dark,
+body.dark-mode .btn-secondary {
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Optional: hover effect */
+body.dark-mode .btn:hover {
+  background-color: #444;
+  border-color: #444;
+  color: #fff;
+}
+
+/* Outline buttons (like View Details) */
+body.dark-mode .btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+body.dark-mode .btn-outline-dark:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Fix for hero section button in dark mode */
+body.dark-mode .btn-shop-now {
+  background-color: var(--color-accent); /* or a darker shade like #C89F76 */
+  color: var(--color-bg); /* light text on accent background */
+  border-color: var(--color-accent);
+}
+
+body.dark-mode .btn-shop-now:hover {
+  background-color: #b88b60; /* slightly darker accent */
+  color: #fff;
+}
+
+/* === Footer text fix === */
+body.dark-mode .ll-footer {
+  background: var(--color-surface);
+  border-top-color: #2a2a2a;
+  color: var(--color-text); /* ensure footer text is readable */
+}
+
+body.dark-mode .ll-footer .text-muted {
+  color: var(--color-text) !important; /* override Bootstrap muted gray */
+}
+
+/* === Subscribe button fix === */
+body.dark-mode .ll-footer .btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg); /* light text */
+}
+
+body.dark-mode .ll-footer .btn-primary:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+
+/* === Shop page Apply & Clear buttons === */
+body.dark-mode #applyFilters.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+body.dark-mode #applyFilters.btn-primary:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+
+body.dark-mode #clearFilters.btn-outline-secondary {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+body.dark-mode #clearFilters.btn-outline-secondary:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* === Contact page Send Message button === */
+body.dark-mode .contact-page button.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+body.dark-mode .contact-page button.btn-primary:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+/* Home page Explore Collections button fix */
+body.dark-mode .btn-secondary {
+  background-color: var(--color-accent);   /* warm accent color */
+  border-color: var(--color-accent);
+  color: var(--color-bg);                  /* light text for contrast */
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #b88b60;               /* slightly darker accent on hover */
+  border-color: #b88b60;
+  color: #fff;
+}
+/* Product page text fixes */
+body.dark-mode #productDesc,
+body.dark-mode #detailsText,
+body.dark-mode .small.text-muted {
+  color: var(--color-text) !important; /* use light text color */
+}
+
+/* Add to Cart button fix */
+body.dark-mode #addToCartBtn.btn-primary {
+  background-color: var(--color-accent);   /* warm accent color */
+  border-color: var(--color-accent);
+  color: var(--color-bg);                  /* light text for contrast */
+}
+
+body.dark-mode #addToCartBtn.btn-primary:hover {
+  background-color: #b88b60;               /* slightly darker accent on hover */
+  border-color: #b88b60;
+  color: #fff;
+}
+/* Dark mode toggle button fix */
+body.dark-mode #themeToggle.btn-outline-secondary {
+  background-color: transparent;       /* keep it clean */
+  border-color: var(--color-text);     /* visible border */
+  color: var(--color-text);            /* icon/text visible */
+}
+
+body.dark-mode #themeToggle.btn-outline-secondary:hover {
+  background-color: var(--color-text); /* invert on hover */
+  color: var(--color-bg);              /* light icon/text on dark background */
+}
+/* Cart page muted text fix */
+body.dark-mode .cart-page .text-muted,
+body.dark-mode .card .text-muted,
+body.dark-mode footer .text-muted {
+  color: var(--color-text) !important; /* ensure readability */
+}
+
+/* Proceed to Checkout button fix */
+body.dark-mode .btn-primary {
+  background-color: var(--color-accent);   /* accent color pops in dark mode */
+  border-color: var(--color-accent);
+  color: var(--color-bg);                  /* light text for contrast */
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #b88b60;               /* slightly darker accent on hover */
+  border-color: #b88b60;
+  color: #fff;
+}
+body.dark-mode .btn-secondary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+/* Dark mode Confirm Order button */
+body.dark-mode #confirmOrder.btn-success {
+  background-color: var(--color-success);  /* your green success color */
+  border-color: var(--color-success);
+  color: var(--color-bg);                  /* light text for contrast */
+}
+
+body.dark-mode #confirmOrder.btn-success:hover {
+  background-color: #4caf50;               /* slightly brighter green */
+  border-color: #4caf50;
+  color: #fff;
+}
+
+/* Checkout nav-pills custom theme */
+.nav-pills .nav-link {
+  color: var(--color-text);              /* normal text color */
+  border-radius: 6px;                    /* softer corners */
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--color-accent); /* warm accent instead of blue */
+  color: var(--color-bg);                /* light text for contrast */
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #b88b60;             /* slightly darker accent on hover */
+  color: #fff;
+}
+
+/* Dark mode consistency */
+body.dark-mode .nav-pills .nav-link {
+  color: var(--color-text);
+}
+
+body.dark-mode .nav-pills .nav-link.active {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+body.dark-mode .nav-pills .nav-link:hover {
+  background-color: #b88b60;
+  color: #fff;
+}
+/* === Dark Mode Button Fixes (Homepage & Footer) === */
+
+/* Shop Now button */
+.dark-mode .btn-shop-now {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+.dark-mode .btn-shop-now:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+/* === Dark Mode Pagination Button Fix === */
+.dark-mode #pagination .btn {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.dark-mode #pagination .btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Active page button */
+.dark-mode #pagination .btn.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.dark-mode #pagination .btn.btn-primary:hover {
+  background-color: #b88b60;
+  border-color: #b88b60;
+  color: #fff;
+}
+/* Chatbot Icon */
+.ai-assistant-icon1 {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.chatbot-photo1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Chatbot Window */
+#chatbot1 {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 320px;
+  height: 420px;
+  background: #EEE8D5;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chat-header1 {
+  background: #c3af9c;
+  color:#000000;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+#closeChat1 {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.chat-body1 {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message1 {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.user-message1 {
+  background: #FFF8E7;
+  color: #3E3E3E;
+  align-self: flex-end;
+}
+
+.bot-message1 {
+  background: #F5F5DC;
+  color: #3E3E3E;
+  align-self: flex-start;
+}
+
+.thinking1 {
+  font-style: italic;
+  opacity: 0.7;
+  align-self: flex-start;
+  background: #c3af9c;
+  color: #4c3927;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+.chat-footer1 {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chat-footer1 input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+.chat-footer1 button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: #c3af9c;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Dark mode for chatbot */
+body.dark-mode #chatbot1 {
+  background: #1e1e1e;          /* dark surface */
+  color: #f2f2f2;               /* light text */
+  border: 1px solid #333;
+}
+
+body.dark-mode .chat-header1 {
+  background: #2a2a2a;          /* darker header */
+  color: #f2f2f2;
+}
+
+body.dark-mode .chat-body1 {
+  background: #1e1e1e;
+  color: #f2f2f2;
+}
+
+body.dark-mode .user-message1 {
+  background: #444;             /* user bubble */
+  color: #fff;
+}
+
+body.dark-mode .bot-message1 {
+  background: #333;             /* bot bubble */
+  color: #f2f2f2;
+}
+
+body.dark-mode .thinking1 {
+  background: #333;
+  color: #aaa;
+}
+
+body.dark-mode .chat-footer1 {
+  border-top: 1px solid #333;
+  background: #1e1e1e;
+}
+
+body.dark-mode .chat-footer1 input {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: #f2f2f2;
+}
+
+body.dark-mode .chat-footer1 input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .chat-footer1 button {
+  background: #444;
+  color: #fff;
+}
+
+

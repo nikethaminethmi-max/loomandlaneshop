@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loom & Lane — Home</title>
+   <link rel="icon" type="image/png" href="logo.JPG" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="ll-header">
+    <nav class="navbar navbar-expand-lg container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+       <img src="logo.JPG" alt="Loom & Lane Logo" style="height: 40px;" class="me-2" />
+      <span class="ll-logo-type">Loom & Lane</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="listing.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+         </ul>
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-wrap">
+            <input type="text" class="form-control form-control-sm" id="searchInput" placeholder="Search…" />
+          </div>
+          <button id="themeToggle" class="btn btn-sm btn-outline-secondary" aria-label="Toggle dark mode">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+          <a href="cart.html" class="cart-link position-relative">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count badge rounded-pill">0</span>
+          </a>
+          <a href="account.html" class="cart-link position-relative">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container-fluid py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1>Artfully made for your home</h1>
+            <p class="lead">Elegant decor, crafts, and accessories—crafted with care in Sri Lanka, shipped worldwide.</p>
+            <a href="listing.html" class="btn btn-primary btn-shop-now">Shop Now</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image rounded-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5">
+      <h2 class="mb-4">Featured</h2>
+      <div class="row g-4" id="featuredGrid">
+        <!-- Featured items (static examples) -->
+        <div class="col-6 col-lg-3">
+          <div class="card product-card">
+            <img src="cushionCover.jpg" class="card-img-top" alt="Handwoven Cotton Cushion Cover">
+            <div class="card-body">
+              <h3 class="card-title h6">Handwoven Cotton Cushion Cover</h3>
+              <p class="price">$24.00</p>
+              <a href="product.html?id=1" class="btn btn-outline-dark btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card product-card">
+            <img src="candleHolder.jpg" class="card-img-top" alt="Wooden Tealight Candle Holder Set">
+            <div class="card-body">
+              <h3 class="card-title h6">Wooden Tealight Candle Holder Set</h3>
+              <p class="price" data-usd="18">$18.00</p>
+              <a href="product.html?id=12" class="btn btn-outline-dark btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card product-card">
+            <img src="wallArtDeco.jpg" class="card-img-top" alt="Wall Art">
+            <div class="card-body">
+              <h3 class="card-title h6">Wall Art</h3>
+              <p class="price" data-usd="12">$12.00</p>
+              <a href="product.html?id=11" class="btn btn-outline-dark btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="card product-card">
+            <img src="porcelainVase.jpg" class="card-img-top" alt="Porcelain Flower Vase">
+            <div class="card-body">
+              <h3 class="card-title h6">Porcelain Flower Vase</h3>
+              <p class="price" data-usd="35">$35.00</p>
+              <a href="product.html?id=3" class="btn btn-outline-dark btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-band container-fluid py-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">Free shipping worldwide on orders over $100</p>
+        <a href="listing.html" class="btn btn-secondary btn-sm">Explore Collections</a>
+      </div>
+    </section>
+
+    <section class="container my-5">
+      <h2 class="mb-4">Collections</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="collection-tile">
+            <div class="tile-img tile-crafts"></div>
+            <div class="tile-content">
+              <h3 class="h5">Crafts</h3>
+              <a href="crafts.html" class="btn btn-outline-dark btn-sm">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="collection-tile">
+            <div class="tile-img tile-decor"></div>
+            <div class="tile-content">
+              <h3 class="h5">Decor</h3>
+              <a href="decor.html" class="btn btn-outline-dark btn-sm">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="collection-tile">
+            <div class="tile-img tile-accessories"></div>
+            <div class="tile-content">
+              <h3 class="h5">Accessories</h3>
+              <a href="accessories.html" class="btn btn-outline-dark btn-sm">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="ll-footer mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="h6">Newsletter</h4>
+          <p>Sign up for design stories and limited drops.</p>
+          <div class="d-flex gap-2">
+            <input class="form-control" type="email" placeholder="Email address" />
+            <button class="btn btn-primary btn-sm">Subscribe</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+         <h4 class="h6">Follow us</h4>
+         <div class="d-flex gap-3">
+          <a href="https://www.instagram.com/loom_ndLane" target="_blank" aria-label="Instagram">
+           <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.pinterest.com" target="_blank" aria-label="Pinterest">
+           <i class="fa-brands fa-pinterest"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+           <i class="fa-brands fa-facebook"></i>
+          </a>
+         </div>
+         </div>
+
+        <div class="col-md-4">
+          <h4 class="h6">Preferences</h4>
+          <div class="d-flex gap-2">
+            <select class="form-select form-select-sm" aria-label="Country">
+              <option selected>Sri Lanka</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+            </select>
+          
+            <select id="currencySelect" class="form-select form-select-sm" aria-label="Currency">
+              <option value="USD" selected>USD</option>
+              <option value="LKR">LKR</option>
+              <option value="GBP">GBP</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 small text-muted">
+        © Loom & Lane, All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Chatbot Icon -->
+<div class="ai-assistant-icon1" id="chatbotToggle1" title="AI Assistant">
+  <img src="chatBot.jpg" alt="AI Assistant" class="chatbot-photo1">
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbot1">
+  <div class="chat-header1">
+    AI Assistant
+    <span id="closeChat1">&times;</span>
+  </div>
+  <div class="chat-body1" id="chatBody1"></div>
+  <div class="chat-footer1">
+    <input type="text" id="userInput1" placeholder="Type a message...">
+    <button id="sendBtn1">Send</button>
+  </div>
+</div>
+
+<!-- Chatbot Script -->
+<script src="chatbotjjj.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

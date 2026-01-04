@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-page="account">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loom & Lane — Account</title>
+  <link rel="icon" type="image/png" href="logo.JPG" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="ll-header">
+    <nav class="navbar navbar-expand-lg container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.JPG" alt="Loom & Lane Logo" style="height: 40px;" class="me-2" />
+        <span class="ll-logo-type">Loom & Lane</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="listing.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-wrap">
+            <input type="text" class="form-control form-control-sm" id="searchInput" placeholder="Search…" />
+          </div>
+          <button id="themeToggle" class="btn btn-sm btn-outline-secondary" aria-label="Toggle dark mode">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+          <a href="cart.html" class="cart-link position-relative">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count badge rounded-pill">0</span>
+          </a>
+          <a href="account.html" class="cart-link position-relative">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container my-4">
+    <h1 class="h4 mb-3">My Account</h1>
+
+    <!-- Sign In -->
+    <section id="auth-section">
+      <form id="signin-form" class="card p-3 mb-4">
+        <h2 class="h6">Sign In</h2>
+        <input type="text" id="signinName" class="form-control mb-2" placeholder="Name" required>
+        <input type="email" id="signinEmail" class="form-control mb-2" placeholder="Email" required>
+        <input type="password" id="signinPassword" class="form-control mb-2" placeholder="Password" required>
+        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+      </form>
+
+      <button id="signout-btn" class="btn btn-secondary mb-4" style="display:none;">Sign Out</button>
+    </section>
+
+    <!-- User Details -->
+    <section id="user-details" class="card p-3 mb-4" style="display:none;">
+      <h2 class="h6">User Details</h2>
+      <p><strong>Name:</strong> <span id="user-name"></span></p>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
+    </section>
+
+    <!-- Order History -->
+    <section id="order-history" class="card p-3 mb-4" style="display:none;">
+      <h2 class="h6">Order History</h2>
+      <table class="table table-sm">
+        <thead><tr><th>Order #</th><th>Total</th></tr></thead>
+        <tbody id="orders-list"></tbody>
+      </table>
+    </section>
+
+  <!-- Footer -->
+  <footer class="ll-footer mt-5">
+    <div class="container py-4 text-center small text-muted">
+      © Loom & Lane, All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Account page logic
+    $(function(){
+      const signinForm = $('#signin-form');
+      const signoutBtn = $('#signout-btn');
+      const userDetails = $('#user-details');
+      const orderHistory = $('#order-history');
+      const wishlist = $('#wishlist');
+
+      // Sign in
+      signinForm.on('submit', function(e){
+        e.preventDefault();
+        const email = $('#signinEmail').val();
+        const name = $('#signinName').val();
+        localStorage.setItem('user', JSON.stringify({name, email}));
+        showAccount();
+      });
+
+      // Sign out
+      signoutBtn.on('click', function(){
+        localStorage.removeItem('user');
+        hideAccount();
+      });
+
+      function showAccount(){
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(!user) return;
+        $('#user-name').text(user.name);
+        $('#user-email').text(user.email);
+        signinForm.hide();
+        signoutBtn.show();
+        userDetails.show();
+        orderHistory.show();
+        wishlist.show();
+        renderOrders();
+        renderWishlist();
+      }
+
+      function hideAccount(){
+        signinForm.show();
+        signoutBtn.hide();
+        userDetails.hide();
+        orderHistory.hide();
+        wishlist.hide();
+      }
+
+      function renderOrders(){
+        const last = localStorage.getItem('lastOrder');
+        const tbody = $('#orders-list').empty();
+        if(last){
+          const order = JSON.parse(last);
+          tbody.append(`<tr><td>${order.orderNumber}</td><td>${formatCurrency(order.total)}</td></tr>`);
+        } else {
+          tbody.append('<tr><td colspan="2" class="text-muted">No orders yet.</td></tr>');
+        }
+      }
+
+      function renderWishlist(){
+        const list = JSON.parse(localStorage.getItem('wishlist')||'[]');
+        const container = $('#wishlist-items').empty();
+        if(list.length===0){
+          container.html('<div class="text-muted">No items in wishlist.</div>');
+          return;
+        }
+        list.forEach(p=>{
+          container.append(`
+            <div class="col-6 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="${p.imageURL}" class="card-img-top" alt="${p.name}">
+                <div class="card-body">
+                  <h3 class="card-title h6">${p.name}</h3>
+                  <p class="price" data-usd="${p.price}">${formatCurrency(p.price)}</p>
+                  <a href="product.html?id=${p.id}" class="btn btn-outline-dark btn-sm">View Details</a>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      }
+
+      // Auto-load if signed in
+      if(localStorage.getItem('user')) showAccount();
+    });
+  </script>
+</body>
+</html>
